@@ -139,6 +139,9 @@ function inviaCommento() {
   var entry = testo_finale;
   existingEntries.push(entry);
   localStorage.setItem(lezione, JSON.stringify(existingEntries));
+
+
+  var click_counter = 0;
 }
 function eliminaCommento() {
   var div = document.getElementById("elimina");
@@ -173,6 +176,7 @@ function eliminaCommento() {
 }
 
 function eliminaCommento_parte2() {
+  click_counter = 0;
   var checkboxes = document.getElementsByClassName("checkbox");
   var existingEntries = JSON.parse(localStorage.getItem(lezione));
   for (let i of checkboxes) {

@@ -134,10 +134,13 @@
 
                 </div>
             </div>
+            
             <div class="col py-3">
+                <a name="uno"></a>
 
                 <div class=" border-bottom container col-xxl-12 px-2 py-2">
                     <div class="row flex-lg-row  g-5 py-5">
+
 
                         <div class="col">
                             <h1 id="lezione" class="display-5 fw-bold lh-1 mb-3 text-center">Lezione 2</h1>
@@ -147,21 +150,20 @@
                 </div>
 
                 <div class="container">
-                    <a name="uno"></a>
-
+                    
 
 
                     <iframe id="videoselezionato" class="ratio border p-4 text-center mb-4" width="560" height="540"
-                        src="https://www.youtube.com/embed/8Z1eMy2FoX4" title="YouTube video player" frameborder="0"
+                        src="https://www.youtube.com/embed/uOxDEysvNCc" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
 
                         <div>
                             <a href="https://drive.google.com/file/d/1OAd4MN_J0aHgSoqrO8RVv2-a4_2NGwlR/view?usp=sharing"
-                                target="_blank">Slide della lezione</a>
+                                target="_blank">Slides della lezione</a>
                         </div>
                         <div class="col">
-                            <p class="lead">Descrizione della lezione </p>
+                            <p class="lead">Primi passi nel linguaggio Html, il linguaggio di markup più utilizzato nel web </p>
                         </div>
                         <div>
                             <a name="due"></a>
@@ -184,10 +186,9 @@
                             <div class="mb-3">
                                 <input class="form-control" type="text" id="testo" rows="3"
                                     onkeydown="if (event.keyCode == 13) {inviaCommento(); this.value='';}">
-
                             </div>
-                            <button class="btn btn-primary" onclick="inviaCommento()">Aggiungi il commento</button>
-                            <button class="btn btn-outline-primary" onclick="eliminaCommento()">Scegli il commento
+                            <button class="btn btn-primary" onclick="inviaCommento(); document.getElementById('testo').value ='';">Aggiungi il commento</button>
+                            <button class="btn btn-outline-primary" onclick="eliminaCommento();">Scegli il commento
                                 da eliminare</button>
                             <br>
                             <div id="elimina">
@@ -206,7 +207,7 @@
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
-                    <div class=" h-100 text-center">
+                    <div class=" h-100 text-center ">
 
                         <p class=" text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
                     </div>
