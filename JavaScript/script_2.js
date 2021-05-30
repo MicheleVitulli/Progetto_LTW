@@ -106,6 +106,7 @@ function inviaCommento() {
   localStorage.setItem(lezione, JSON.stringify(existingEntries));
 }
 function eliminaCommento() {
+  alert ('aaojosidjasdoi');
   var div = document.getElementById("elimina");
   var user = sessionStorage.getItem("login_user");
   //prendo elementi

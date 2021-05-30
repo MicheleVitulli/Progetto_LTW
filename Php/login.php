@@ -18,15 +18,14 @@
       // Se ho un riscontro devo avere una line soltanto
 
       if($count == 1) {
-         $_SESSION['login_user'] = $myusername;
-         echo "Login: Utente: ".$_SESSION['login_user'];
+         $_SESSION['login_user_for_php'] = $myusername;
+         echo "Login: Utente: ".$_SESSION['login_user_for_php'];
          header("location: ../Html/home.html");
       }else {
-         
+
 
       }
    }
-   mysqli_close($db);
 ?>
 
 <html>
@@ -66,7 +65,7 @@
 
 </head>
 <body>
-    
+
     <div class="d-flex justify-content-center">
         <div class="text-center">
             <h1 class="text-primary">Errore nel Login</h1>
@@ -75,7 +74,7 @@
     <h5 class="card-title">Controlla la password e l'indirizzo e-mail inserito.</h5>
     <a href="../index.html">Torna alla pagina iniziale<a>
     <p class="card-text"></p>
-    
+
   </div>
 </div>
 
