@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,13 +18,8 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script src="../JavaScript/script_2.js"></script>
+    <script src="../JavaScript/script.js"></script>
     <title>Lezione Uno</title>
-    <!--Ajax-->
-
-
-
-
 
 
 </head>
@@ -49,7 +47,8 @@
                             </li>
                         </ul>
                         <div>
-                            <a href="../index.html" class="btn btn-outline-primary" role="button" onclick="sessionStorage.clear();">Log out</a>
+                            <a href="../index.html" class="btn btn-outline-primary" role="button"
+                                onclick="sessionStorage.clear();">Log out</a>
 
                         </div>
                     </div>
@@ -59,7 +58,7 @@
     </header>
 
     <!-- Lezione -->
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -89,19 +88,19 @@
                                 </svg> <span class="ms-1 d-none d-sm-inline">Lezioni</span> </a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="lezione1.html" class="nav-link px-0" id="lezione1"> <span
-                                            class="d-none d-sm-inline">Lezione</span>
+                                    <a href="lezione1.html.php" class="nav-link px-0" id="lezione1">
+                                        <span class="d-none d-sm-inline">Lezione</span>
                                         1
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="lezione2.html" class="nav-link px-0" id="lezione2"> <span
+                                    <a href="lezione2.html.php" class="nav-link px-0" id="lezione2"> <span
                                             class="d-none d-sm-inline">Lezione</span>
                                         2
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="lezione3.html" class="nav-link px-0" id="lezione2"> <span
+                                    <a href="lezione3.html.php" class="nav-link px-0" id="lezione2"> <span
                                             class="d-none d-sm-inline">Lezione</span>
                                         3
                                     </a>
@@ -119,11 +118,12 @@
                             <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                                 <li class="w-100">
                                     <a href="#uno" class="nav-link px-0"> <span class="d-none d-sm-inline">Video</span>
-                                        </a>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#due" class="nav-link px-0"> <span class="d-none d-sm-inline">Commenti</span>
-                                        </a>
+                                    <a href="#due" class="nav-link px-0"> <span
+                                            class="d-none d-sm-inline">Commenti</span>
+                                    </a>
                                 </li>
                             </ul>
                         </li>
@@ -151,79 +151,113 @@
 
                 <div class="container">
 
-
-
-                    <iframe id="videoselezionato" class="ratio border p-4 text-center mb-4" width="560" height="540"
-                        src="https://www.youtube.com/embed/XVoPqS2yj6k" title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-
-                        <div>
-                            <a href="https://drive.google.com/file/d/1OAd4MN_J0aHgSoqrO8RVv2-a4_2NGwlR/view?usp=sharing"
-                                target="_blank">Slides della lezione</a>
+                    <div class="mt-4">
+                        <div class="ratio ratio-16x9">
+                            <iframe class="videoLezione border p-2"
+                                src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
                         </div>
-                        <div class="col">
-                            <p class="lead">Introduzione al corso, prerequisiti e descrizione generale dello svoglimento delle lezioni </p>
-                        </div>
-                        <div>
-                            <a name="due"></a>
-                            <h2 class="titoli-sezioni">Commenti</h2>
-                            <section id="commenti">
-                                <!-- Questa sotto è la lista che conterrà i commenti e si popolerà attraverso il bottone-->
-                                <ul id="lista_commenti">
-                                </ul>
-                                <script type="text/javascript">
-    $(document).ready( function() {
-        $('#lista_commenti').load('../Php/lista_commenti.php');
-    });
-</script>
-                            </section>
-                            <h3 class="titoli-sezioni">Inserisci un commento</h3>
-                            <div class="mb-3">
-                              <form id="myForm" class="" action="../Php/inserisci_commento.php" method="post">
-                                <input class="form-control" type="text" id="testo" rows="3" name="commento">
-                                <input type="hidden" id="user_name" name="user" value="">
-                                <input type="hidden" id= "lezione_name" name="lezione" value="">
-                                <input type="button" onclick="mySubmit()" name="" value="Aggiungi">
-                              </form>
-                              <script>
-  function mySubmit() {
-     document.getElementById('user_name').value = sessionStorage.getItem('login_user');
-     document.getElementById('lezione_name').value = document.getElementById('lezione').innerHTML;
-     document.getElementById("myForm").submit();
-   }
-</script>
-
-                            </div>
-                            <button class="btn btn-primary" onclick="inviaCommento(); document.getElementById('testo').value ='';">Aggiungi il commento</button>
-                            <button class="btn btn-outline-primary" onclick="eliminaCommento();">Scegli il commento
-                                da eliminare</button>
-                            <br>
-                            <div id="elimina">
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-        <!-- FOOTER -->
-
-        <footer class="footer bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class=" h-100 text-center ">
-
-                        <p class=" text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
                     </div>
 
 
+                    <div class="mt-4">
+                        <a href="https://drive.google.com/file/d/1OAd4MN_J0aHgSoqrO8RVv2-a4_2NGwlR/view?usp=sharing"
+                            target="_blank">Slides della lezione</a>
+                    </div>
+                    <div class="col mt-4 border-bottom">
+                        <p class="lead">Introduzione al corso, prerequisiti e descrizione
+                            generale
+                            dello
+                            svoglimento
+                            delle lezioni </p>
+                    </div>
+                    <div class="mt-4"> <a name="due"></a>
+                        <h2 class="titoli-sezioni">Commenti</h2>
+                        <section id="commenti">
+                            <ul id="lista_commenti">
+                                <?php
+                                   include("../Php/config.php");
+                                   include("config.php");
+                                   $sql ="SELECT * FROM Commenti WHERE Commenti.lezione = 'Lezione 1'";
+                                   $res=mysqli_query($db,$sql);
+                                   while($row = mysqli_fetch_assoc($res)){
+                                     echo "<li>".$row['utente'].': '.$row['commento']."</li>";
+                                   };
+                                ?>
+                            </ul>
+                        </section>
+                        </section>
+                        <h3 class="titoli-sezioni">Inserisci un commento</h3>
+                        <div class="mb-3">
+                            <form id="myForm" class="" onsubmit="mySubmit()" action="../Php/inserisci_commento.php"
+                                method="post">
+                                <input class="form-control" type="text" id="testo" rows="3" name="commento">
+                                <input type="hidden" id="user_name" name="user" value="">
+                                <input type="hidden" id="lezione_name" name="lezione" value="">
+                                <input type="button" onclick="mySubmit(); document.getElementById('testo').value ='';"
+                                    name="" value="Aggiungi" class=" m-3 btn btn-primary">
+                            </form>
+                        </div>
+                        <script>
+                            function mySubmit() {
+                                document.getElementById('user_name').value = sessionStorage.getItem('login_user');
+                                document.getElementById('lezione_name').value = document.getElementById('lezione').innerHTML;
+                                document.getElementById("myForm").submit();
+                            }
+                            function open() {
+                                document.getElementById('myForm').style.visibility = 'hidden';
+                            }
+
+                        </script>
+                        <!--sezione per eliminazione-->
+                        <h3>Elimina un tuo commento</h3>
+
+                        <form id="myForm" style="visibility: visible;" class="" action="../Php/elimina_commento.php"
+                            method="post">
+                            <?php
+                                 include("../Php/config.php");
+                                 $sql ="SELECT * FROM Commenti";
+                                 $res=mysqli_query($db,$sql);
+                                 while($row = mysqli_fetch_assoc($res)){
+                                     if($row['utente'] == $_SESSION['login_user_for_php'] && $row['lezione'] == 'Lezione 1'){
+                                   echo "<label class='mx-2'>".$row['commento']."</label>";
+                                   echo "<input type='checkbox' class='form-check-input' name='id_commento[]' value='".$row['id']."'>";
+                                   echo "<br>";
+                                     }
+                                }
+                              ?>
+                            <input type="submit" class="m-3 btn btn-secondary" name="" value="Elimina">
+
+                        </form>
+
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
+    </div>
+
+
+
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer pt-4 pb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class=" h-100 text-center">
+                    <ul class="list-inline mb-2">
+
+
+
+                    </ul>
+                    <p class=" text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
+                </div>
+
+
+            </div>
+        </div>
 
     </footer>
 

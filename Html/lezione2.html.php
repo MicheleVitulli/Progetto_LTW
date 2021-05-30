@@ -19,7 +19,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="../JavaScript/script.js"></script>
-    <title>Lezione Uno</title>
+    <title>Lezione Due</title>
 
 
 </head>
@@ -88,19 +88,19 @@ session_start();
                                 </svg> <span class="ms-1 d-none d-sm-inline">Lezioni</span> </a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="lezione1.html" class="nav-link px-0" id="lezione1">
+                                    <a href="lezione1.html.php" class="nav-link px-0" id="lezione1">
                                         <span class="d-none d-sm-inline">Lezione</span>
                                         1
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="lezione2.html" class="nav-link px-0" id="lezione2"> <span
+                                    <a href="lezione2.html.php" class="nav-link px-0" id="lezione2"> <span
                                             class="d-none d-sm-inline">Lezione</span>
                                         2
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="lezione3.html" class="nav-link px-0" id="lezione2"> <span
+                                    <a href="lezione3.html.php" class="nav-link px-0" id="lezione2"> <span
                                             class="d-none d-sm-inline">Lezione</span>
                                         3
                                     </a>
@@ -143,7 +143,7 @@ session_start();
 
 
                         <div class="col">
-                            <h1 id="lezione" class="display-5 fw-bold lh-1 mb-3 text-center">Lezione 1</h1>
+                            <h1 id="lezione" class="display-5 fw-bold lh-1 mb-3 text-center">Lezione 2</h1>
                         </div>
 
                     </div>
@@ -164,11 +164,7 @@ session_start();
                             target="_blank">Slides della lezione</a>
                     </div>
                     <div class="col mt-4 border-bottom">
-                        <p class="lead">Introduzione al corso, prerequisiti e descrizione
-                            generale
-                            dello
-                            svoglimento
-                            delle lezioni </p>
+                        <p class="lead">Primi passi nel linguaggio Html, il linguaggio di markup più utilizzato nel web</p>
                     </div>
                     <div class="mt-4"> <a name="due"></a>
                         <h2 class="titoli-sezioni">Commenti</h2>
@@ -177,59 +173,63 @@ session_start();
                                 <?php
                                    include("../Php/config.php");
                                    include("config.php");
-                                   $sql ="SELECT * FROM Commenti";
+                                   $sql ="SELECT * FROM Commenti WHERE Commenti.lezione = 'Lezione 2'";
                                    $res=mysqli_query($db,$sql);
                                    while($row = mysqli_fetch_assoc($res)){
                                      echo "<li>".$row['utente'].': '.$row['commento']."</li>";
                                    };
                                 ?>
-                              </ul>
+                            </ul>
                         </section>
                         </section>
-                            <h3 class="titoli-sezioni">Inserisci un commento</h3>
-                            <div class="mb-3">
-                              <form id="myForm" class="" onsubmit="mySubmit()" action="../Php/inserisci_commento.php" method="post">
+                        <h3 class="titoli-sezioni">Inserisci un commento</h3>
+                        <div class="mb-3">
+                            <form id="myForm" class="" onsubmit="mySubmit()" action="../Php/inserisci_commento.php"
+                                method="post">
                                 <input class="form-control" type="text" id="testo" rows="3" name="commento">
                                 <input type="hidden" id="user_name" name="user" value="">
-                                <input type="hidden" id= "lezione_name" name="lezione" value="">
-                                <input type="button" onclick="mySubmit(); document.getElementById('testo').value ='';" name="" value="Aggiungi" class=" m-3 btn btn-primary">
-                              </form>
-                            </div>
-                            <script>
-                              function mySubmit() {
+                                <input type="hidden" id="lezione_name" name="lezione" value="">
+                                <input type="button" onclick="mySubmit(); document.getElementById('testo').value ='';"
+                                    name="" value="Aggiungi" class=" m-3 btn btn-primary">
+                            </form>
+                        </div>
+                        <script>
+                            function mySubmit() {
                                 document.getElementById('user_name').value = sessionStorage.getItem('login_user');
                                 document.getElementById('lezione_name').value = document.getElementById('lezione').innerHTML;
                                 document.getElementById("myForm").submit();
-                              }
-                              function open(){
+                            }
+                            function open() {
                                 document.getElementById('myForm').style.visibility = 'hidden';
-                              }
+                            }
 
-                            </script>
-                            <!--sezione per eliminazione-->
-                            <h3>Elimina un tuo commento</h3>
+                        </script>
+                        <!--sezione per eliminazione-->
+                        <h3>Elimina un tuo commento</h3>
 
-                            <form id="myForm"  style="visibility: visible;" class="" action="../Php/elimina_commento.php" method="post">
-                              <?php
+                        <form id="myForm" style="visibility: visible;" class="" action="../Php/elimina_commento.php"
+                            method="post">
+                            <?php
                                  include("../Php/config.php");
                                  $sql ="SELECT * FROM Commenti";
                                  $res=mysqli_query($db,$sql);
                                  while($row = mysqli_fetch_assoc($res)){
-                                     if($row['utente'] == $_SESSION['login_user_for_php']){
+                                     if($row['utente'] == $_SESSION['login_user_for_php']&& $row['lezione'] == 'Lezione 2'){
                                    echo "<label class='mx-2'>".$row['commento']."</label>";
                                    echo "<input type='checkbox' class='form-check-input' name='id_commento[]' value='".$row['id']."'>";
                                    echo "<br>";
                                      }
                                 }
                               ?>
-                              <input type="submit" class="m-3 btn btn-secondary" name="" value="Elimina">
+                            <input type="submit" class="m-3 btn btn-secondary" name="" value="Elimina">
 
-                            </form>
-                    </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
