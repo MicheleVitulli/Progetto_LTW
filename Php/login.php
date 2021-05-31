@@ -58,6 +58,7 @@
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="../favicon.jpg" />
 
 
 
@@ -72,7 +73,7 @@
         <div class="card m-4" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Controlla la password e l'indirizzo e-mail inserito.</h5>
-    <a href="../index.html">Torna alla pagina iniziale<a>
+    <a href="../Login/index.html">Torna alla pagina iniziale<a>
     <p class="card-text"></p>
 
   </div>

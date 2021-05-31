@@ -51,27 +51,30 @@
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="../favicon.jpg" />
 
 
 
 
 
 </head>
+
 <body>
-    
+
     <div class="d-flex justify-content-center">
         <div class="text-center">
-            <h1 class="text-primary">Errore nella Registrazione</h1>
+            <h1 class="text-primary">Errore nel SignUp</h1>
         <div class="card m-4" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">Potrebbe già esistere un account che utilizza questa e-mail, controlla i campi riempiti.</h5>
-    <a href="../index.html">Torna alla pagina iniziale<a>
+    <h5 class="card-title">Controlla la mail, potrebbe esistere già un account che la utilizza</h5>
+    <a href="../Registrazione/">Torna alla pagina iniziale<a>
     <p class="card-text"></p>
-    
+
   </div>
 </div>
 
     </div>
 </div>
 </body>
+
 </html>

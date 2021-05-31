@@ -20,6 +20,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <title>Progetto LTW</title>
+
+  <link rel="icon" type="image/png" href="favicon.jpg" />
+
 </head>
 
 <body>
@@ -57,11 +60,11 @@
 
   <!-- SEZIONE 1 HERO -->
 
-  <div class="heroimage border-bottom container col-xxl-12 px-4 py-5">
+  <div class=" border-bottom container col-xxl-12 px-4 py-5">
     <div class="row flex-lg-row-reverse  g-4 py-5">
       <div class="col-12 col-sm-12 col-lg-6 text-center">
         <img src="https://www.udacity.com/blog/wp-content/uploads/2020/06/HTML_Blog-scaled.jpeg"
-          class="d-block mx-lg-auto img-fluid" width="700" height="500" loading="lazy">
+          class="d-block mx-lg-auto img-fluid" width="700" height="00" loading="lazy">
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold lh-1 mb-3">Linguaggi e tecnologie per il web</h1>
@@ -91,7 +94,7 @@
           </svg>
         </div>
         <h2 class="title">Ore di lezione</h2>
-        <span class="contatore">90</span>
+        <span class="contatore">60</span>
       </div>
       <div class="riquadroIcone col text-center">
         <div class="iconeContatore ">
@@ -102,7 +105,7 @@
           </svg>
         </div>
         <h2 class="title">Ore di esercitazione</h2>
-        <span class="contatore">20</span>
+        <span class="contatore">15</span>
       </div>
       <div class="riquadroIcone col text-center">
         <div class="iconeContatore">
@@ -134,7 +137,7 @@
           <div class="col-md-7">
             <h2 class="titoli-sezioni ">Linguaggi di markup. <span class="text-muted">HTML.</span>
             </h2>
-            <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p class="lead">HTML è l’acronimo di HyperText Markup Language, è un linguaggio di markup (di ‘contrassegno’ o ‘di marcatura’), che permette di indicare come disporre gli elementi all’interno di una pagina.</p>
 
 
           </div>
@@ -149,7 +152,7 @@
           <div class="col-md-7 order-md-2">
             <h2 class="titoli-sezioni">Programmazione Web. <span class="text-muted">Javascript.</span>
             </h2>
-            <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p class="lead">In questo corso esploreremo gli elementi di base del linguaggio, dalla dichiarazione delle variabili ai tipi di dato, dalle istruzioni alle funzioni, analizzando la sua relazione “storica” con l’HTML.</p>
 
 
           </div>
@@ -165,7 +168,9 @@
         <div class="row px-4 py-5">
           <div class="col-md-7">
             <h2 class="titoli-sezioni">Framework e librerie.<span class="text-muted">Bootstrap e JQuery.</span></h2>
-            <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p class="lead">Bootstrap è una raccolta di strumenti liberi per la progettazione di interfacce. jQuery è una delle librerie più conosciute di JavaScript, studieremo
+              il loro utilizzo per uno sviluppo web più flessibile e moderno.
+            </p>
           </div>
           <div class="col-md-5">
             <img id="tre" src="https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/jquery-512.png"
@@ -179,47 +184,49 @@
   </div>
 
 
-  <!-- SEZIONE 3 BULLET POINT -->
+  <!-- SEZIONE icone-pulsanti -->
 
+  <div class="sezione-icone-pulsanti">
+    <div class="container px-4 py-5 border-bottom ">
+      <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
+        <div class="bullet col text-center">
+          <div class="bullet-icone btn btn-primary" type="button" id="toggle-orario">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+              class="bi bi-clock-fill" viewBox="0 0 16 16">
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+            </svg>
+          </div>
+          <h2>Orario delle lezioni</h2>
+          <p id="orario" class="bullet-paragrafo">Lunedì: 16-19 <br> Giovedì: 17-19</p>
 
-  <div class="container px-4 py-5 border-bottom sezione-3">
-    <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
-      <div class="bullet col text-center">
-        <div class="bullet-icone btn btn-primary" type="button" id="toggle-orario">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-clock-fill"
-            viewBox="0 0 16 16">
-            <path
-              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
-          </svg>
         </div>
-        <h2>Orario delle lezioni</h2>
-        <p id="orario" class="bullet-paragrafo">Lunedì: 16-19 <br> Giovedì: 17-19</p>
-
-      </div>
-      <div class="bullet col text-center">
-        <div class="bullet-icone btn btn-primary" type="button" id="toggle-sede">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-            class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-          </svg>
+        <div class="bullet col text-center">
+          <div class="bullet-icone btn btn-primary" type="button" id="toggle-sede">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+              class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+            </svg>
+          </div>
+          <h2>Sede</h2>
+          <p id="sede" class="bullet-paragrafo">Dipartimento di Ingegneria Informatica Automatica e Gestionale
+            "Antonio
+            Ruberti", Via Ariosto, 25, 00185 Roma RM
+          </p>
         </div>
-        <h2>Sede</h2>
-        <p id="sede" class="bullet-paragrafo">Dipartimento di Ingegneria Informatica Automatica e Gestionale "Antonio
-          Ruberti", Via Ariosto, 25, 00185 Roma RM
-        </p>
-      </div>
-      <div class="bullet col text-center">
-        <div class="bullet-icone btn btn-primary" type="button" id="toggle-contatti">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-            class="bi bi-person-lines-fill" viewBox="0 0 16 16">
-            <path
-              d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
-          </svg>
-        </div>
-        <h2>Contatti docente</h2>
-        <p id="contatti-docente" class="bullet-paragrafo">
-          rosati@diag.uniroma1.it </p>
+        <div class="bullet col text-center">
+          <div class="bullet-icone btn btn-primary" type="button" id="toggle-contatti">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+              class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+              <path
+                d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+            </svg>
+          </div>
+          <h2>Contatti docente</h2>
+          <p id="contatti-docente" class="bullet-paragrafo">
+            rosati@diag.uniroma1.it </p>
 
+        </div>
       </div>
     </div>
   </div>
@@ -228,21 +235,15 @@
   <!-- FOOTER -->
 
 
-  <footer class="footer bg-light">
+  <footer class="footer-2 bg-light ">
     <div class="container">
       <div class="row">
-        <div class=" h-100 text-center">
-          <ul class="list-inline mb-2">
 
+        <p class="text-center text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
 
-
-          </ul>
-          <p class=" text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
-        </div>
 
 
       </div>
-    </div>
     </div>
 
   </footer>

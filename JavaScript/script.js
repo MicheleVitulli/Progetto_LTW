@@ -169,11 +169,82 @@ $(document).ready(function () {
 
 
 
-//Sezione Michele
+
 function setUser() {
   var username = document.getElementById("user");
   sessionStorage.setItem("login_user", username.value);
   return true;
+}
+function inviaCommento() {
+  //prendo elementi
+  var lezione = document.getElementById("lezione").innerHTML;
+  var testo = document.getElementById("testo2").value;
+  var user = sessionStorage.getItem("login_user");
+  var testo_finale = user + ":" + testo;
+  
+  //creo elementi
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode(testo_finale));
+  var lista_commenti = document.getElementById("lista_commenti");
+  lista_commenti.appendChild(li);
+  //aggiorno localStorage
+  var existingEntries = JSON.parse(localStorage.getItem(lezione));
+  if (existingEntries == null) existingEntries = [];
+  var entry = testo_finale;
+  existingEntries.push(entry);
+  localStorage.setItem(lezione, JSON.stringify(existingEntries));
+  location.reload();
+
+
+  var click_counter = 0;
+}
+function eliminaCommento() {
+  var div = document.getElementById("elimina");
+  var user = sessionStorage.getItem("login_user");
+  //prendo elementi
+  var existingEntries = JSON.parse(localStorage.getItem(lezione));
+  var count = 0;
+  for (let value of existingEntries) {
+    var str = value.split(":");
+    if (str[0] == user) {
+      count += 1;
+      var inp = document.createElement("input");
+      var lab = document.createElement("label");
+      var bro = document.createElement("br");
+      lab.innerHTML = value;
+      inp.setAttribute("type", "checkbox");
+      inp.setAttribute("value", value);
+      inp.setAttribute("class", "checkbox");
+      div.appendChild(inp);
+      div.appendChild(lab);
+      div.appendChild(bro);
+    }
+  }
+  if (count == 0) {
+    alert("Non ci sono tuoi commenti");
+    return;
+  }
+  var butt = document.createElement("button");
+  butt.setAttribute("onClick", "eliminaCommento_parte2()");
+  butt.innerHTML = "Elimina";
+  div.appendChild(butt);
+}
+
+function eliminaCommento_parte2() {
+  click_counter = 0;
+  var checkboxes = document.getElementsByClassName("checkbox");
+  var existingEntries = JSON.parse(localStorage.getItem(lezione));
+  for (let i of checkboxes) {
+    for (let value of existingEntries) {
+      if (value == i.value && i.checked == true) {
+        let index = existingEntries.indexOf(value);
+        existingEntries.splice(index, 1);
+      }
+    }
+  }
+  //alert(existingEntries);
+  localStorage.setItem(lezione, JSON.stringify(existingEntries));
+  location.reload();
 }
 
 

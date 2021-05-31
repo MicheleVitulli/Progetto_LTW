@@ -11,7 +11,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
@@ -117,12 +117,37 @@ session_start();
                                 </svg> <span class="ms-1 d-none d-sm-inline">Sezione</span></a>
                             <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="#uno" class="nav-link px-0"> <span class="d-none d-sm-inline">Video</span>
+                                    <a href="#uno" class="nav-link px-0">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z" />
+                                        </svg>
+                                        <span class="d-none d-sm-inline">Video</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#due" class="nav-link px-0"> <span
-                                            class="d-none d-sm-inline">Commenti</span>
+                                    <a href="#due" class="nav-link px-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z" />
+                                        </svg>
+                                        <span class="d-none d-sm-inline">Commenti</span>
+                                    </a>
+                                </li>
+                                <li class="w-100">
+                                    <a href="#tre" class="nav-link px-0">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
+                                            <path
+                                                d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                                            <path
+                                                d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
+                                        </svg>
+                                        <span class="d-none d-sm-inline">Appunti</span>
                                     </a>
                                 </li>
                             </ul>
@@ -154,7 +179,7 @@ session_start();
                     <div class="mt-4">
                         <div class="ratio ratio-16x9">
                             <iframe class="videoLezione border p-2"
-                                src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                                src="https://www.youtube.com/embed/j-3eArinB7E" allowfullscreen></iframe>
                         </div>
                     </div>
 
@@ -163,14 +188,18 @@ session_start();
                         <a href="https://drive.google.com/file/d/1OAd4MN_J0aHgSoqrO8RVv2-a4_2NGwlR/view?usp=sharing"
                             target="_blank">Slides della lezione</a>
                     </div>
+                    <a name="due"></a>
+
                     <div class="col mt-4 border-bottom">
                         <p class="lead">Primi passi nel linguaggio Html, il linguaggio di markup più utilizzato nel web</p>
                     </div>
-                    <div class="mt-4"> <a name="due"></a>
-                        <h2 class="titoli-sezioni">Commenti</h2>
-                        <section id="commenti">
-                            <ul id="lista_commenti">
-                                <?php
+
+                    <div class="container">
+                        <div class="border-bottom pb-4">
+                            <h2 class=" pt-4">COMMENTI</h2>
+                            <section id="commenti" class="pb-4">
+                                <ul id="lista_commenti">
+                                    <?php
                                    include("../Php/config.php");
                                    include("config.php");
                                    $sql ="SELECT * FROM Commenti WHERE Commenti.lezione = 'Lezione 2'";
@@ -179,58 +208,100 @@ session_start();
                                      echo "<li>".$row['utente'].': '.$row['commento']."</li>";
                                    };
                                 ?>
-                            </ul>
-                        </section>
-                        </section>
-                        <h3 class="titoli-sezioni">Inserisci un commento</h3>
-                        <div class="mb-3">
-                            <form id="myForm" class="" onsubmit="mySubmit()" action="../Php/inserisci_commento.php"
-                                method="post">
-                                <input class="form-control" type="text" id="testo" rows="3" name="commento">
-                                <input type="hidden" id="user_name" name="user" value="">
-                                <input type="hidden" id="lezione_name" name="lezione" value="">
-                                <input type="button" onclick="mySubmit(); document.getElementById('testo').value ='';"
-                                    name="" value="Aggiungi" class=" m-3 btn btn-primary">
-                            </form>
-                        </div>
-                        <script>
-                            function mySubmit() {
-                                document.getElementById('user_name').value = sessionStorage.getItem('login_user');
-                                document.getElementById('lezione_name').value = document.getElementById('lezione').innerHTML;
-                                document.getElementById("myForm").submit();
-                            }
-                            function open() {
-                                document.getElementById('myForm').style.visibility = 'hidden';
-                            }
+                                </ul>
+                            </section>
+                            </section>
+                            <h4>Inserisci un commento</h4>
+                            <div class="mb-2">
+                                <form id="myForm" class="" onsubmit="mySubmit()" action="../Php/inserisci_commento.php"
+                                    method="post">
+                                    <input class="form-control" type="text" id="testo" rows="3" name="commento">
+                                    <input type="hidden" id="user_name" name="user" value="">
+                                    <input type="hidden" id="lezione_name" name="lezione" value="">
+                                    <input type="button"
+                                        onclick="mySubmit(); document.getElementById('testo').value ='';" name=""
+                                        value="Aggiungi" class=" m-3 btn btn-primary">
+                                </form>
+                            </div>
+                            <script>
+                                function mySubmit() {
+                                    document.getElementById('user_name').value = sessionStorage.getItem('login_user');
+                                    document.getElementById('lezione_name').value = document.getElementById('lezione').innerHTML;
+                                    document.getElementById("myForm").submit();
+                                }
+                                function open() {
+                                    document.getElementById('myForm').style.visibility = 'hidden';
+                                }
 
-                        </script>
-                        <!--sezione per eliminazione-->
-                        <h3>Elimina un tuo commento</h3>
+                            </script>
+                            <!--sezione per eliminazione-->
+                            <h4>Elimina un tuo commento</h4>
 
-                        <form id="myForm" style="visibility: visible;" class="" action="../Php/elimina_commento.php"
-                            method="post">
-                            <?php
+                            <form id="myForm2" style="visibility: visible;" class=""
+                                action="../Php/elimina_commento.php" method="post">
+                                <?php
                                  include("../Php/config.php");
                                  $sql ="SELECT * FROM Commenti";
                                  $res=mysqli_query($db,$sql);
                                  while($row = mysqli_fetch_assoc($res)){
-                                     if($row['utente'] == $_SESSION['login_user_for_php']&& $row['lezione'] == 'Lezione 2'){
+                                     if($row['utente'] == $_SESSION['login_user_for_php'] && $row['lezione'] == 'Lezione 2'){
                                    echo "<label class='mx-2'>".$row['commento']."</label>";
                                    echo "<input type='checkbox' class='form-check-input' name='id_commento[]' value='".$row['id']."'>";
                                    echo "<br>";
                                      }
                                 }
                               ?>
-                            <input type="submit" class="m-3 btn btn-secondary" name="" value="Elimina">
+                                <input type="submit" class="m-3 btn btn-secondary" name="" value="Elimina">
 
-                        </form>
+                            </form>
+                        </div>
+                        <div>
+                            <a name="tre"></a>
+
+                            <h2 class="pt-4">APPUNTI PERSONALI</h2>
+                            <section id=" commenti">
+                                <!-- Questa sotto è la lista che conterrà i commenti e si popolerà attraverso il bottone-->
+                                <ul id="lista_commenti2">
+                                </ul>
+                                <script>
+                                    var lezione = document.getElementById("lezione").innerHTML;
+                                    var arr = JSON.parse(localStorage.getItem(lezione));
+                                    for (let value of arr) {
+                                        var us = value.split(":");
+                                        if (us[0] == sessionStorage.getItem("login_user")) {
+                                            var el = document.createElement("li");
+                                            el.append(us[1]);
+                                            $('#lista_commenti2').append(el);
+                                        }
+                                    }
+                                </script>
+                            </section>
+                            <h4 class="pt-4">Scrivi qualcosa nei tuoi appunti</h4>
+                            <div class="mb-3">
+                                <input class="form-control" type="text" id="testo2" rows="3"
+                                    onkeydown="if (event.keyCode == 13) {inviaCommento(); this.value='';}">
+                            </div>
+                            <button class="btn btn-primary mb-1"
+                                onclick="inviaCommento(); document.getElementById('testo2').value ='';">Aggiungi
+                                appunto
+                            </button>
+
+
+                            <button class="btn btn-outline-primary mb-1 " onclick="eliminaCommento();">Scegli
+                                l'appunto
+                                da
+                                eliminare</button>
+                            <br>
+                            <div id="elimina">
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
 
 
 
@@ -239,25 +310,19 @@ session_start();
 
     <!-- FOOTER -->
 
-    <footer class="footer pt-4 pb-4 bg-light">
+
+    <footer class="footer-2 bg-light">
         <div class="container">
             <div class="row">
-                <div class=" h-100 text-center">
-                    <ul class="list-inline mb-2">
 
+                <p class="text-center text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
 
-
-                    </ul>
-                    <p class=" text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
-                </div>
 
 
             </div>
         </div>
 
     </footer>
-
-
 </body>
 
 </html>
