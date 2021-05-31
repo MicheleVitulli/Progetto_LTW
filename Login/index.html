@@ -19,9 +19,9 @@
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
 
-    <script src="../JavaScript/script.js"></script>
+  <script src="../JavaScript/script.js"></script>
 
-  <title>Pagina registrazione</title>
+  <title>Pagina login</title>
 </head>
 
 <body>
@@ -30,84 +30,84 @@
 
   <header class="header bg-light sticky-top">
     <div class="container">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">LTW</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-          <div>
-            <a href="../Registrazione/index.html" class="btn btn-primary" role="button">Registrati</a>
-            <a href="index.html" class="btn btn-outline-primary" role="button">Accedi</a>
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">LTW</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+            <div>
+              <a href="../Registrazione/index.html" class="btn btn-primary" role="button">Registrati</a>
+              <a href="index.html" class="btn btn-outline-primary" role="button">Accedi</a>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
   </header>
-<div>
-  <div class="container col-12 col-sm-12 col-lg-6 px-4 py-5 mb-5">
-    <div class="container form-registrazione">
+  <div>
+    <div class="container col-12 col-sm-12 col-lg-6 px-4 py-5 mb-5">
+      <div class="container riquadro">
 
-  <!-- FORM LOGIN -->
+        <!-- FORM LOGIN -->
 
-      <form onsubmit="setUser()" action="../Php/login.php" class="form-signin" method="POST" name="form-registrazione">
-        <div class="mb-3">
-          <h1 class="h3 mb-3">Inserisci i tuoi dati per accedere al corso</h1>
-          <label for="exampleInputEmail1" class="form-label">Indirizzo email</label>
-          <input type="email" name="username" class="form-control" id="user" placeholder="Email">
+        <form onsubmit="setUser()" action="../Php/login.php" class="form-signin" method="POST"
+          name="form-registrazione">
+          <div class="mb-3">
+            <h1 class="h3 mb-3">Inserisci i tuoi dati per accedere al corso</h1>
+            <label for="exampleInputEmail1" class="form-label">Indirizzo email</label>
+            <input type="email" name="username" class="form-control" id="user" placeholder="Email">
+          </div>
+
+
+          <label class="form-label">Password</label>
+
+          <div class="input-group mb-3">
+
+            <input type="password" name="password" class="form-control" placeholder="Password" id="password"
+              aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="mostrapassword"
+              onclick="mostrapw()">Mostra</button>
+          </div>
+
+          <input type="submit" class="btn btn-primary" id="bottonelogin" value="Accedi">
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- FOOTER -->
+
+
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class=" h-100 text-center">
+          <ul class="list-inline mb-2">
+            
+
+
+
+          </ul>
+          <p class=" text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
         </div>
 
 
-        <label  class="form-label">Password</label>
-
-        <div class="input-group mb-3">
-
-          <input type="password" name="password" class="form-control" placeholder="Password" id="password" aria-describedby="button-addon2">
-          <button class="btn btn-outline-secondary" type="button" id="mostrapassword" onclick="mostrapw()">Mostra</button>
-        </div>
-
-        <input type="submit" class="btn btn-primary" id="bottonelogin" value="Accedi">
-      </form>
-
-    </div>
-
-  </div>
-</div>
-<!-- FOOTER -->
-
-
-<footer class="footer bg-light">
-  <div class="container">
-    <div class="row">
-      <div class=" h-100 text-center">
-        <ul class="list-inline mb-2">
-<li class="list-inline-item"><a href="#">Home</a></li>
-<li class="list-inline-item"><a href="#">About</a></li>
-<li class="list-inline-item"><a href="#">testo</a></li>
-<li class="list-inline-item"><a href="#">testo</a></li>
-
-
-        </ul>
-        <p class=" text-muted small mb-4 mb-lg-0 ">Progetto LTW Macrì Vitulli</p>
-      </div>
-
-
       </div>
     </div>
-  </div>
 
-</footer>
+  </footer>
 
 
 </body>
