@@ -18,6 +18,7 @@
       // Se ho un riscontro devo avere una line soltanto
 
       if($count == 1) {
+          //Controllo se gli username corrispondono
          $_SESSION['login_user_for_php'] = $myusername;
          echo "Login: Utente: ".$_SESSION['login_user_for_php'];
          header("location: ../Html/home.html");

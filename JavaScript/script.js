@@ -168,7 +168,7 @@ $(document).ready(function () {
 
 
 
-//creazione e rimozione commenti e appunti
+//settaggio sessionstorage
 function setUser() {
   var username = document.getElementById("user");
   sessionStorage.setItem("login_user", username.value);
@@ -196,7 +196,6 @@ function inviaCommento() {
   location.reload();
 
 
-  var click_counter = 0;
 }
 
 function eliminaCommento() {
@@ -232,7 +231,6 @@ function eliminaCommento() {
 }
 
 function eliminaCommento_parte2() {
-  click_counter = 0;
   var checkboxes = document.getElementsByClassName("checkbox");
   var existingEntries = JSON.parse(localStorage.getItem(lezione));
   for (let i of checkboxes) {
@@ -243,7 +241,6 @@ function eliminaCommento_parte2() {
       }
     }
   }
-  //alert(existingEntries);
   localStorage.setItem(lezione, JSON.stringify(existingEntries));
   location.reload();
 }
