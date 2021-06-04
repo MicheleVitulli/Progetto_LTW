@@ -1,3 +1,6 @@
+//controlli password registrazione
+
+//verifica la qualità della password e mostra a schermo un progress bar in base al numero di requisiti raggiunti
 function qualitapw() {
   var parametri = {
     contacaratteri: false,
@@ -61,7 +64,7 @@ function qualitapw() {
   }
 }
 
-
+//mostra/nascondi password con js
 function mostrapw() {
   let password = document.getElementById("password");
   let bottonempw = document.getElementById("mostrapassword");
@@ -75,33 +78,34 @@ function mostrapw() {
   }
 }
 
-function mostrapwripetuta() {
-  let password = document.getElementById("passwordRipetuta");
-  let bottonempw = document.getElementById("mostrapasswordRipetuta");
 
-  if (password.getAttribute("type") == "password") {
-    password.setAttribute("type", "text");
-    bottonempw.style.color = "#1f78f4";
-  } else {
-    password.setAttribute("type", "password");
-    bottonempw.style.color = "#808080";
-  }
-}
+//mostra/nascondi password ripetuta con jquery
 
-function validapassword() {
-  var passwordInserita = document.getElementById("password").value;
-  var passwordRipetuta = document.getElementById("passwordRipetuta").value;
-  let buttondis = document.getElementById("bottonereg");
+$(document).ready(function () {
+  $('#mostrapasswordRipetuta').click(function () {
+    $('#passwordRipetuta').attr('type', $('#passwordRipetuta').is(':password') ? 'text' : 'password');
 
-  if (passwordInserita == passwordRipetuta) {
-    buttondis.disabled = false;
-  } else {
-    buttondis.disabled = true;
+    if ($('#passwordRipetuta').attr('type') === 'password') {} else {
+      $('#eye').removeClass('fa-eye-slash').addClass('fa-eye');
+    }
+  });
 
-  }
-}
+  //verifica se le pw corrispondono
+  $("#passwordRipetuta").keyup(function () {
+    if ($("#password").val() != $("#passwordRipetuta").val()) {
+      $("#messaggiovalidazione").html("Le password non corrispondono").css("color", "red");
+      $("#bottonereg").prop("disabled", true);
 
-//funzione per cambiare colore allo sfondo
+    } else {
+      $("#messaggiovalidazione").html("Le password corrispondono").css("color", "green");
+      $("#bottonereg").prop("disabled", false);
+
+    }
+  })
+});
+
+
+//funzione per cambiare colore allo sfondo basandosi sul viewport
 
 window.addEventListener('scroll', () => {
 
@@ -133,7 +137,7 @@ window.addEventListener('scroll', () => {
 
 });
 
-
+//elementi dinamici homepage
 $(document).ready(function () {
 
   $("#toggle-orario").click(function () {
@@ -159,29 +163,25 @@ $(document).ready(function () {
     })
   });
 
-
-
-
 });
 
 
 
 
-
-
-
+//creazione e rimozione commenti e appunti
 function setUser() {
   var username = document.getElementById("user");
   sessionStorage.setItem("login_user", username.value);
   return true;
 }
+
 function inviaCommento() {
   //prendo elementi
   var lezione = document.getElementById("lezione").innerHTML;
   var testo = document.getElementById("testo2").value;
   var user = sessionStorage.getItem("login_user");
   var testo_finale = user + ":" + testo;
-  
+
   //creo elementi
   var li = document.createElement("li");
   li.appendChild(document.createTextNode(testo_finale));
@@ -198,6 +198,7 @@ function inviaCommento() {
 
   var click_counter = 0;
 }
+
 function eliminaCommento() {
   var div = document.getElementById("elimina");
   var user = sessionStorage.getItem("login_user");
@@ -246,9 +247,3 @@ function eliminaCommento_parte2() {
   localStorage.setItem(lezione, JSON.stringify(existingEntries));
   location.reload();
 }
-
-
-
-
-
-

@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
     <link rel="stylesheet" href="../style.css" />
@@ -16,7 +16,6 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="../JavaScript/script.js"></script>
     <title>Lezione Uno</title>
@@ -27,17 +26,17 @@ session_start();
 <body>
     <!-- HEADER -->
 
-    <header class="header bg-light sticky-top">
-        <div class="container">
+    <header class="header bg-light sticky-top ">
+        <div class="container ">
             <nav class="navbar navbar-expand-sm navbar-light bg-light">
                 <div class="container">
                     <span class="navbar-brand" href="#">LTW</span>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false"
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <div class="collapse navbar-collapse" id="navbarToggle">
                         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="home.html">Home</a>
@@ -57,14 +56,14 @@ session_start();
         </div>
     </header>
 
-    <!-- Lezione -->
-    <div class="container-fluid ">
+
+    <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light ">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <a href="/"
                         class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                        <span class="fs-5 d-none d-sm-inline text-dark">Menu</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
@@ -159,6 +158,7 @@ session_start();
 
                 </div>
             </div>
+            <!-- Lezione -->
 
             <div class="col py-3">
                 <a name="uno"></a>
@@ -178,8 +178,8 @@ session_start();
 
                     <div class="mt-4">
                         <div class="ratio ratio-16x9">
-                            <iframe class="videoLezione border p-2"
-                                src="https://www.youtube.com/embed/j-3eArinB7E" allowfullscreen></iframe>
+                            <iframe class="videoLezione border p-2" src="https://www.youtube.com/embed/j-3eArinB7E"
+                                allowfullscreen></iframe>
                         </div>
                     </div>
 
