@@ -27,37 +27,37 @@ function qualitapw() {
     barracolorata.appendChild(span);
   }
 
-  let spanRef = document.getElementsByClassName("barra");
-  for (let i = 0; i < spanRef.length + 1; i++) {
-    switch (spanRef.length) {
+  let spanBarra = document.getElementsByClassName("barra");
+  for (let i = 0; i < spanBarra.length + 1; i++) {
+    switch (spanBarra.length) {
 
       case 0:
-        sottopassword.textContent = "Inserisci una password";
+        testopw.textContent = "Inserisci una password";
 
       case 1:
-        spanRef[i].style.background = "#ff3e36";
+        spanBarra[i].style.background = "#ff3e36";
         specifiche.style.display = "block";
-        sottopassword.textContent = "La password inserita è molto debole";
+        testopw.textContent = "La password inserita è molto debole";
         break;
 
       case 2:
-        spanRef[i].style.background = "#ff691f";
+        spanBarra[i].style.background = "#ff691f";
         specifiche.style.display = "block";
 
-        sottopassword.textContent = "La password inserita è debole";
+        testopw.textContent = "La password inserita è debole";
         break;
 
       case 3:
-        spanRef[i].style.background = "#ffda36";
+        spanBarra[i].style.background = "#ffda36";
         specifiche.style.display = "block";
 
-        sottopassword.textContent = "La password inserita è buona";
+        testopw.textContent = "La password inserita è buona";
         break;
 
       case 4:
-        spanRef[i].style.background = "#0be881";
+        spanBarra[i].style.background = "#0be881";
         specifiche.style.display = "none";
-        sottopassword.textContent = "La password inserita è ottima ";
+        testopw.textContent = "La password inserita è ottima ";
         break;
 
     }
@@ -105,7 +105,7 @@ $(document).ready(function () {
 });
 
 
-//funzione per cambiare colore allo sfondo basandosi sul viewport
+//funzione per cambiare colore allo sfondo nella home basandosi sul viewport
 
 window.addEventListener('scroll', () => {
 
